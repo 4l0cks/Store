@@ -1,4 +1,5 @@
 .item-card {
+  margin: 10px;
   min-width: 50px;
   max-width: 300px;
   width: 100%;
