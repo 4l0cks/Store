@@ -1,6 +1,5 @@
 # CRUD Items Application
 
-This project is a CRUD (Create, Read, Update, Delete) application for managing items. It consists of a backend built with Java, Spring Boot, and a frontend built with Angular.
 Ce projet est un CRUD pour pouvoir géré un catalogue d'objets. J'ai créé un backend en Java, Spring utilisant Jpa,Mapstruct, Lombok et PostgreSQL ainsi qu'un frontend avec Angular et Angular Material.
 
 ## Prerequisites
