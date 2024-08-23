@@ -39,4 +39,40 @@ public class ItemService {
         ItemEntity createdItem = itemRepository.save(newItem);
         return itemMapper.toItemDto(createdItem);
     }
+
+    public ItemDto deleteItem(Long id){
+        ItemEntity itemEntity = itemRepository.findById(id)
+                .orElseThrow(() -> new AppException("Item not found", HttpStatus.NOT_FOUND));
+        ItemDto itemDto = itemMapper.toItemDto(itemEntity);
+
+        itemRepository.deleteById(id);
+
+        return itemDto;
+    }
+
+    public ItemDto patchItem(Long id, ItemDto itemDto) {
+        ItemEntity itemEntity= itemRepository.findById(id)
+                .orElseThrow(() -> new AppException("Item not found", HttpStatus.NOT_FOUND));
+
+        if (itemDto.getBrand() != null) {
+            itemEntity.setBrand(itemDto.getBrand());
+        }
+        if (itemDto.getName() != null) {
+            itemEntity.setName(itemDto.getName());
+        }
+        if (itemDto.getDescription() != null) {
+            itemEntity.setDescription(itemDto.getDescription());
+        }
+        if (itemDto.getType() != null) {
+            itemEntity.setType(itemDto.getType());
+        }
+        if (itemDto.getPrice() != 0) {
+            itemEntity.setPrice(itemDto.getPrice());
+        }
+
+        ItemEntity savedItem = itemRepository.save(itemEntity);
+
+        return itemMapper.toItemDto(savedItem);
+    }
+
 }

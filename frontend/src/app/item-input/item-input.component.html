@@ -1,0 +1,30 @@
+<form #itemForm="ngForm" class="item-form" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="item-full-width">
+    <mat-label>Brand</mat-label>
+    <input name="brand" ngModel matInput>
+  </mat-form-field>
+
+  <mat-form-field class="item-full-width">
+    <mat-label>Name</mat-label>
+    <input name="name" ngModel matInput>
+</mat-form-field>
+
+  <mat-form-field class="item-full-width">
+    <mat-label>Description</mat-label>
+    <input name="description" ngModel matInput>
+</mat-form-field>
+
+  <mat-form-field class="item-full-width">
+    <mat-label>Price</mat-label>
+    <input name="price" ngModel matInput>
+</mat-form-field>
+
+
+  <mat-form-field class="item-full-width">
+    <mat-label>Type</mat-label>
+    <input name="type" ngModel matInput>
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>

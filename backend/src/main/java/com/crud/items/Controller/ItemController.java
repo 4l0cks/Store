@@ -31,4 +31,14 @@ public class ItemController {
         ItemDto createdItem = itemService.createItem(itemDto);
         return ResponseEntity.created(URI.create("/items/" + createdItem.getId())).body(createdItem);
     }
+
+    @DeleteMapping("/items/{id}")
+    public ResponseEntity<ItemDto> deleteItem(@PathVariable Long id){
+        return ResponseEntity.ok(itemService.deleteItem(id));
+    }
+
+    @PatchMapping("/items/{id}")
+    public ResponseEntity<ItemDto> patchItem(@PathVariable Long id, @RequestBody ItemDto itemDto) {
+        return ResponseEntity.ok(itemService.patchItem(id, itemDto));
+    }
 }

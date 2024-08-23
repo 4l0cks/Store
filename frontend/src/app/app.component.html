@@ -1,0 +1,11 @@
+<div class="main">
+  <h1>Add a new Item</h1>
+
+  <app-item-input (newDataEvent)="appendData($event)"/>
+
+  <h2>Items List</h2>
+  <app-item-wrapper *ngFor="let item of items"
+                    (removeItemEvent)="removeItem($event)"
+                    [item]="item"
+  />
+</div>

@@ -1,0 +1,9 @@
+.item-full-width {
+  width: 100%;
+}
+
+.item-form {
+  min-width: 50px;
+  max-width: 300px;
+  width: 100%;
+}

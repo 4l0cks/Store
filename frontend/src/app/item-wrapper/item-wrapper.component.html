@@ -1,0 +1,12 @@
+<p>
+  <app-item-edit *ngIf ="editable == true"
+                    (editDataEvent)="handleSaveEdition($event)"
+                    [item]="item"
+  />
+
+  <app-item-display *ngIf ="editable == false"
+                    (removeItemEvent)="removeItemEvent.emit($event)"
+                    (editItemEvent)="handleEditClick()"
+                    [item]="item"
+  />
+</p>
